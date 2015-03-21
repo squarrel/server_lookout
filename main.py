@@ -32,7 +32,6 @@ class Root(Widget):
 			self.ssh.connect(self.server_url, username=self.username, password=self.password)
 		except Exception as e:
 			print('Exception connecting to the server: ', e)
-			print(self.ssh)
 
 	def check_memory(self):
 		try:

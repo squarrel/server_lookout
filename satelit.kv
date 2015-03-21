@@ -1,0 +1,55 @@
+#:kivy 1.8.0
+
+<Root>:
+	BoxLayout:
+		size: root.size
+		orientation: 'vertical'
+			
+		GridLayout:
+			size: self.size
+			rows: 8
+			cols: 2
+			
+			Label:
+				text: 'Server url: ' + root.server_url
+				size: 1, 1
+			TextInput:
+				id: server_url
+				text: root.server_url
+				multiline: False
+				on_text_validate: root.url_to_storage(self)
+					
+			Label:
+				text: 'Username: ' + root.username
+			TextInput:
+				id: username
+				text: root.username
+				multiline: False
+				on_text_validate: root.username_to_storage(self)
+				
+			Label:
+				text: 'Password'
+			TextInput:
+				id: password
+				text: root.password
+				multiline: False
+				password: True
+				on_text_validate: root.password_to_storage(self)
+				
+			Label:
+				text: 'Connection status' #+ root.connection_status
+			Button:
+				text: 'Connect'
+				on_press: root.connect()
+				
+			Button:
+				text: 'Check memory usage'
+				on_press: root.check_memory()
+				
+			Button:
+				text: 'List folders'
+				on_press: root.list_folders()
+
+		ScrollView:
+			Label:
+				text: root.messages

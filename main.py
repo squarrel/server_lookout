@@ -13,10 +13,6 @@ import paramiko
 from crawler import Crawler
 
 class Root(Widget):
-	
-	'''def __init__(self, **kwargs):
-		super(Root, self).__init__(**kwargs)
-		Clock.schedule_interval(self, update, 1)'''
 
 	store = JsonStore('storage.json')
 	server_url = StringProperty(store.get('server_url')['value'])
@@ -80,7 +76,7 @@ class Root(Widget):
 		url = self.website
 		crawler = Crawler(url)
 		crawler.crawl_all_links()
-		print('Results: ', crawler.results)
+		#print('Results: ', crawler.results)
 		self.messages = crawler.results
 
 class SatelitApp(App):

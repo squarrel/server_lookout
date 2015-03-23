@@ -40,7 +40,7 @@
 				text: 'Connection status' #+ root.connection_status
 			Button:
 				text: 'Connect'
-				on_press: root.connect()
+				on_release: root.connect()
 				
 			Button:
 				text: 'Check memory usage'
@@ -60,7 +60,7 @@
 				
 			Button:
 				text: 'Crawl'
-				on_press: root.crawl()
+				on_release: root.crawl()
 
 		Label:
 			text: 'Output'

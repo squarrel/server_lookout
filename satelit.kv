@@ -49,6 +49,18 @@
 			Button:
 				text: 'List folders'
 				on_press: root.list_folders()
+				
+			Label:
+				text: 'URL of the website to crawl: ' + root.website
+			TextInput:
+				id: website
+				text: root.website
+				multiline: False
+				on_text_validate: root.website_to_storage(self)
+				
+			Button:
+				text: 'Crawl'
+				on_press: root.crawl()
 
 		Label:
 			text: 'Output'

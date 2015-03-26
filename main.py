@@ -75,7 +75,7 @@ class Root(Widget):
 		#print('self.website: ', self.website)
 		url = self.website
 		crawler = Crawler(url)
-		crawler.crawl_all_links()
+		crawler.crawl_all_links(0)
 		#print('Results: ', crawler.results)
 		self.messages = crawler.results
 

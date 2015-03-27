@@ -76,8 +76,8 @@ class Root(Widget):
 		url = self.website
 		crawler = Crawler(url)
 		crawler.crawl_all_links(0)
-		#print('Results: ', crawler.results)
-		self.messages = crawler.results
+		for key, value in crawler.results.items():
+			self.messages += key + ' ' + str(value) + '\n'
 
 class SatelitApp(App):
 	def build(self):
